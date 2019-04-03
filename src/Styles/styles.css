@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Staatliches");
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Source Code Pro", "SFMono-Regular", Consolas, "Roboto Mono",
+    "Droid Sans Mono", "Liberation Mono", Menlo, Courier, monospace;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #444;
+}
+
+::selection {
+  background: #e10279;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Staatliches", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  font-weight: normal;
+  text-align: center;
+  color: #111;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h3 {
+  margin: 3rem 0;
+  font-size: 36px;
+  letter-spacing: 1px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-10%);
+  }
+
+  to {
+    transform: translateX(110%);
+  }
+}
+
+@keyframes slide2 {
+  from {
+    transform: translateX(110%);
+  }
+
+  to {
+    transform: translateX(-10%);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: #e10279;
+  }
+
+  100% {
+    background-color: #f8af3c;
+  }
+}
