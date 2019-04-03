@@ -6,7 +6,7 @@ import LinesDecorator from "./LinesDecorator";
 export default () => {
   return (
     <HeroWrapper>
-      <LinesDecorator />
+      {/*<LinesDecorator />*/}
       <HeroContainer className="container">
         <HeroBody>
           <h1>Download Innovation</h1>
