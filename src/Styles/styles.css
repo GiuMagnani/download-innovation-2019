@@ -17,6 +17,11 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: #444;
+  overflow-x: hidden;
+}
+
+body > div {
+  overflow-x: hidden;
 }
 
 ::selection {
@@ -84,5 +89,25 @@ p {
 
   100% {
     background-color: #f8af3c;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0%) rotate(45deg);
+  }
+
+  100% {
+    transform: translateY(45%) rotate(45deg);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(45%);
   }
 }

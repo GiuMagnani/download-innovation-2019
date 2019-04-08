@@ -1,54 +1,63 @@
 import React from "react";
 import styled from "styled-components";
 import Decorator from "./Decorator";
+import img2018 from "../images/download-2018.jpg";
 
 export default () => (
-  <TopicContainer>
+  <IntroSection>
     <Decorator type="square" />
     <Decorator type="circle-border" />
-    <TopicImg>
-      <div />
-    </TopicImg>
-    <TopicBody>
-      <h4>IT Conference & Festival</h4>
-      <p>
-        Navigating the transmitter won't do anything, we need to copy the
-        primary SQL circuit. Navigating the transmitter won't do anything, we
-        need to copy the primary SQL circuit. Navigating the tra.
-      </p>
-    </TopicBody>
-  </TopicContainer>
+    <IntroContent className="container">
+      <TopicImg style={{ backgroundImage: `url(${img2018})` }}>
+        <div />
+      </TopicImg>
+      <TopicBody>
+        <h4>IT Conference & Festival</h4>
+        <p>
+          Download Innovation is the conference of IT, innovation, youth
+          opportunities and future… <strong>free and open!</strong>
+          <br />
+          <br />2 days of knowledge, learning, sharing, projects, inspirations,
+          creativity… to share experiences and skills on the most innovative
+          trends and technologies in a stimulating and informal environment.
+        </p>
+      </TopicBody>
+    </IntroContent>
+  </IntroSection>
 );
 
-const TopicContainer = styled.div`
-  box-shadow: 0 5px 15px rgba(0, 0, 50, 0.15);
-  background-color: white;
+const IntroSection = styled.section`
   margin: 5rem auto;
   position: relative;
   max-width: 500px;
 
   @media (min-width: 1200px) {
-    max-width: 1040px;
-    box-shadow: none;
-    background-color: transparent;
+    max-width: 1140px;
+  }
+`;
+
+const IntroContent = styled.div`
+  @media (min-width: 1200px) {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    height: 50vh;
+    min-height: 50vh;
+    margin: 5rem auto 12rem;
   }
 `;
 
 const TopicImg = styled.div`
-  background-image: url("https://images.unsplash.com/photo-1508144763612-c39d41eda06c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
   background-size: cover;
   background-position: 50%;
   height: 250px;
   width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 50, 0.15);
 
   @media (min-width: 1200px) {
+    box-shadow: 0;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 1rem;
     width: 600px;
     height: 400px;
     z-index: -1;
@@ -60,6 +69,8 @@ const TopicBody = styled.div`
   position: relative;
   z-index: 1;
   max-width: 600px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 50, 0.15);
 
   h4 {
     text-align: left;
@@ -87,9 +98,7 @@ const TopicBody = styled.div`
     }
 
     padding: 2.5rem 2.5rem;
-    background: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 50, 0.15);
-    //transform: translateX(100%) translateY(100%);
+    transform: translateY(7rem);
 
     &::after {
       left: 2.5rem;

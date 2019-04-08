@@ -1,5 +1,5 @@
 {
-  "name": "download-innovaction-2019",
+  "name": "download-innovation-2019",
   "private": true,
   "description": "Download Innovation 2019 Website",
   "version": "0.1.0",
@@ -16,6 +16,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
+    "react-google-maps": "9.4.5",
     "react-helmet": "^5.2.0",
     "react-pose": "4.0.8",
     "styled-components": "4.2.0"

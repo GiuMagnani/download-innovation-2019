@@ -12,7 +12,7 @@ import "../Styles/grid.css";
 import "../Styles/styles.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-
+import styled from "styled-components";
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -27,18 +27,16 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}>
-          <main>{children}</main>
-        </div>
+        <Main>{children}</Main>
         <Footer />
       </>
     )}
   />
 );
+
+const Main = styled.main`
+  overflow-x: hidden;
+  width: 100%;
+`;
 
 export default Layout;

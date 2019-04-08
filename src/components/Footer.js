@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import LogoBergamo from "../images/logo-bergamo.png";
 import LogoSorint from "../images/sorint-lab-logo.svg";
+import Decorator from "./Decorator";
 
 export default () => (
   <Footer>
-    <Decorator />
-    <Decorator2 />
+    <Decorator type="square" />
+    <Decorator type="circle-border" />
     <div className="container">
       <FooterTop>
         <h5>Promoted by</h5>
@@ -27,34 +28,10 @@ export default () => (
   </Footer>
 );
 
-const Decorator = styled.span`
-  position: absolute;
-  top: -0.5rem;
-  left: 2rem;
-  z-index: 10;
-  height: 2rem;
-  width: 2rem;
-  border-radius: 8px;
-  background: #ec566e;
-  transform: rotate(45deg);
-`;
-
-const Decorator2 = styled.span`
-  position: absolute;
-  top: -10%;
-  left: 25%;
-  z-index: 10;
-  height: 1rem;
-  width: 1rem;
-  border-radius: 50%;
-  border: 4px solid #f8af3c;
-`;
-
 const Footer = styled.footer`
   background-color: #201d24;
   color: white;
   position: relative;
-  margin-top: 2rem;
 
   h5 {
     color: white;

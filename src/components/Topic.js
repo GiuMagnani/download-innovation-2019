@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-export default () => (
-  <TopicContainer>
-    <TopicImg>
+export default ({ className, title, imageUrl }) => (
+  <TopicContainer className={className}>
+    <TopicImg imageUrl={imageUrl}>
       <div />
     </TopicImg>
     <TopicBody>
-      <h4>50+ Talks</h4>
+      <h4>{title}</h4>
       <p>
         Navigating the transmitter won't do anything, we need to copy the
         primary SQL circuit!
@@ -17,29 +17,23 @@ export default () => (
   </TopicContainer>
 );
 
-const TopicContainer = styled.div`
-  box-shadow: 0 5px 15px rgba(0, 0, 50, 0.15);
-  background-color: white;
-  margin: 2rem 0;
+const TopicContainer = styled.a`
+  display: block;
+  height: 100%;
   width: 100%;
-
-  @media (min-width: 800px) {
-    margin: 2rem 1rem;
-    width: calc(50% - 2rem);
-  }
-
-  @media (min-width: 1100px) {
-    width: calc(33.33% - 2rem);
+  
+  &.is-active {
+    box-shadow: 0 5px 15px rgba(0, 0, 50, 0.15);
   }
 `;
 
 const TopicImg = styled.div`
-  background-image: url("https://images.unsplash.com/photo-1508144763612-c39d41eda06c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+  background-image: ${props => `url(${props.imageUrl})`};
   background-size: cover;
   background-position: 50%;
-  height: 150px;
+  height: 180px;
   width: 100%;
-  
+
   @media (min-width: 1200px) {
     height: 200px;
   }
@@ -82,9 +76,8 @@ const TopicButton = styled.a`
   }
 
   &:hover {
-  color: white;
-    background-color: #E10279;
+    color: white;
+    background-color: #e10279;
     animation: 6s 0.2s infinite alternate colorChange;
   }
-\`;
 `;

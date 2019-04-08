@@ -1,9 +1,9 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-export default () => (
+export default ({ type }) => (
   <>
-    <Container>
+    <Container className={`type-${type}`}>
       <Line />
       <Line />
       <Line />
@@ -12,47 +12,60 @@ export default () => (
       <Circle />
       <Circle className="mini" />
     </Container>
-    <BGSquare />
+    <BGSquare className={`type-${type}`} />
   </>
-)
+);
 
 const Container = styled.div`
-  position: absolute;
-  top: 70%;
+  /* position: absolute;
+  top: 40%;
   left: 0;
   width: 200%;
   transform: rotate(45deg) translateX(-30%);
+  z-index: -1; */
+  /* overflow: hidden; */
+
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 200%;
+  transform: rotate(45deg) translateX(-20%) translateY(0%);
   z-index: -1;
-  //overflow: hidden;
-`
+  transform-origin: 0 0;
+
+  @media (min-width: 1200px) {
+    top: 5%;
+    width: 200%;
+  }
+`;
 
 const Line = styled.div`
   position: relative;
   height: 1px;
-  background: rgba(0, 0, 50, 0.15);
+  background: rgba(230, 230, 250, 1);
 
   &:nth-child(1) {
     transform: translateY(0);
   }
 
   &:nth-child(2) {
-    transform: translateY(25px);
+    transform: translateY(35px);
   }
 
   &:nth-child(3) {
-    transform: translateY(50px);
+    transform: translateY(70px);
   }
 
   &:nth-child(4) {
-    transform: translateY(75px);
+    transform: translateY(105px);
   }
-`
+`;
 
 const Square = styled.div`
   top: 0;
   transform: translateX(-10%);
-  animation: 7s 2s infinite alternate slide;
-  animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  animation: 15s 4s infinite alternate slide;
+  animation-timing-function: ease-in-out;
   width: 100%;
 
   &::after {
@@ -65,14 +78,18 @@ const Square = styled.div`
     border-radius: 8px;
     background: #ec566e;
   }
-`
+
+  @media (min-width: 1200px) {
+    animation-duration: 15s;
+  }
+`;
 
 const Circle = styled(Square)`
-  animation: 7s infinite alternate slide2;
+  animation: 15s infinite alternate slide2;
 
   &::after {
     content: "";
-    top: 60px;
+    top: 90px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -82,12 +99,12 @@ const Circle = styled(Square)`
 
   &.mini {
     animation-duration: 20s;
-    animation-delay: 3s;
+    animation-delay: 6s;
     animation-direction: alternate-reverse;
 
     &::after {
       content: "";
-      top: 44px;
+      top: 63px;
       left: 0;
       width: 10px;
       height: 10px;
@@ -96,15 +113,20 @@ const Circle = styled(Square)`
       background: #ec566e;
     }
   }
-`
+
+  @media (min-width: 1200px) {
+    animation-duration: 15s;
+  }
+`;
 
 const BGSquare = styled.div`
   position: absolute;
   width: 300px;
   height: 300px;
+  top: 0;
   right: 0;
   border-radius: 8px;
-  transform: rotate(45deg) translateY(0%) translateX(70%);
+  transform: rotate(45deg) translateY(-30%) translateX(70%);
   transform-origin: 50% 50%;
   background: linear-gradient(to right, #ec566e, #f8af3c);
   z-index: -2;
@@ -119,4 +141,11 @@ const BGSquare = styled.div`
     height: 100%;
     background: linear-gradient(to right, #f8af3c, #ec566e);
   }
-`
+
+  @media (min-width: 1200px) {
+    width: 400px;
+    height: 400px;
+    top: 30%;
+    transform: rotate(45deg) translateY(-30%) translateX(30%);
+  }
+`;

@@ -1,15 +1,15 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
 export default ({ type }) => {
-  return type === "square" ? <DecoratorSquare /> : <DecoratorCircleBorder />
-}
+  return type === "square" ? <DecoratorSquare /> : <DecoratorCircleBorder />;
+};
 
 const DecoratorObject = styled.span`
   position: absolute;
   z-index: 10;
   pointer-events: none;
-`
+`;
 
 const DecoratorSquare = styled(DecoratorObject)`
   top: -0.5rem;
@@ -18,8 +18,8 @@ const DecoratorSquare = styled(DecoratorObject)`
   width: 2rem;
   border-radius: 8px;
   background: #ec566e;
-  transform: rotate(45deg);
-`
+  animation: 3s ease-in-out infinite alternate float;
+`;
 
 const DecoratorCircleBorder = styled(DecoratorObject)`
   top: -10%;
@@ -29,4 +29,5 @@ const DecoratorCircleBorder = styled(DecoratorObject)`
   width: 1rem;
   border-radius: 50%;
   border: 4px solid #f8af3c;
-`
+  animation: 3s ease-in-out 1s infinite alternate-reverse float2;
+`;

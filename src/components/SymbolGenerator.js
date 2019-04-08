@@ -114,7 +114,7 @@ const SymbolWrapper = styled.div`
     box-shadow: 0 5px 15px rgba(0, 0, 50, 0.15);
     background-color: white;
     padding: 5rem 2rem 0;
-    margin: 2rem;
+    margin: 2rem 0 2rem 2rem;
     max-width: 430px;
   }
 `;

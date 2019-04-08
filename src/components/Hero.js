@@ -1,12 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import SymbolGenerator from "./SymbolGenerator";
-import LinesDecorator from "./LinesDecorator";
 
 export default () => {
   return (
     <HeroWrapper>
-      {/*<LinesDecorator />*/}
       <HeroContainer className="container">
         <HeroBody>
           <h1>Download Innovation</h1>
